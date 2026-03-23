@@ -1,0 +1,17 @@
+# Python Virtual Environment
+/expense/Lib/
+/expense/Include/
+/expense/Scripts/
+/expense/pyvenv.cfg
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django database
+db.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db

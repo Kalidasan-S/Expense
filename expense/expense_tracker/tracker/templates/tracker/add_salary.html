@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Add Salary</h3>
+
+<form method="POST" class="mt-4">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label>Month</label>
+        <input type="text" name="month" class="form-control"
+               placeholder="January 2026" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Salary Amount</label>
+        <input type="number" name="amount" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Save Salary
+    </button>
+</form>
+{% endblock %}

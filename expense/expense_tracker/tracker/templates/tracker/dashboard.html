@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<div class="row mt-4">
+    <div class="col-md-3">
+        <div class="card text-bg-primary mb-3">
+            <div class="card-body">
+                <h5>Salary</h5>
+                <h4>₹ {{ salary }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-bg-danger mb-3">
+            <div class="card-body">
+                <h5>Expense</h5>
+                <h4>₹ {{ total_expense }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-bg-success mb-3">
+            <div class="card-body">
+                <h5>Balance</h5>
+                <h4>₹ {{ balance }}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <div class="row mt-4"> -->
+
+
+    <div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Expense Breakdown</h5>
+                <canvas id="expensePie" style="max-width:300px; margin:auto;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const expenseLabels = {{ labels|safe }};
+    const expenseValues = {{ values|safe }};
+</script>
+
+
+
+
+
+
+
+
+
+{% endblock %}

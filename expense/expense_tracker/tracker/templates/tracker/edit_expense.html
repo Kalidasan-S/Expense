@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Edit Expense</h3>
+
+<form method="POST" class="mt-4">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label>Amount</label>
+        <input type="number" name="amount" class="form-control"
+               value="{{ expense.amount }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Category</label>
+        <select name="category" class="form-control" required>
+            {% for cat in categories %}
+                <option value="{{ cat.id }}"
+                    {% if cat == expense.category %}selected{% endif %}>
+                    {{ cat.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Note</label>
+        <input type="text" name="note" class="form-control"
+               value="{{ expense.note }}">
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Update Expense
+    </button>
+</form>
+{% endblock %}
